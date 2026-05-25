@@ -1,0 +1,98 @@
+:root {
+  background-color: #0a0a0a;
+  color: #00d4ff; /* Global Cyan for titles and unit text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+header {
+  border-bottom: 2px solid #333;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  color: white; /* Ensures main header text is white */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* CHANGE: Explicitly make card titles white and visible */
+.card h2 {
+  color: white; 
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem; /* This pushes the number down, away from the word */
+  letter-spacing: 2px; /* Makes the title look a bit more futuristic */
+}
+
+/* CHANGE: Explicitly make big numbers white */
+.value {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white; 
+  line-height: 1; /* Stops the huge text from taking up too much vertical space */
+  margin-bottom: 0.5rem;
+}
+
+/* Ensures units keep the cyan accent color */
+.unit {
+  color: #00d4ff;
+  margin-top: -1rem;
+}
+
+/* Critical warning (Red) still takes priority */
+.critical { color: #ff4d4d; }
+
+.battery-bar {
+  width: 100%;
+  height: 10px;
+  background: #333;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.fill {
+  height: 100%;
+  background: #00d4ff;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.alerts-section {
+  margin-top: 2rem;
+}
+
+.system-ok {
+  color: #00ff00; /* Neon Green for OK */
+  font-weight: bold;
+}
+
+.alert-banner {
+  background: #ff4d4d;
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
